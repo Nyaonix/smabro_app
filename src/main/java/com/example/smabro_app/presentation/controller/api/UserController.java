@@ -9,6 +9,6 @@ public class UserController {
     @GetMapping("/hoge")
     public String hoge() {
 
-        return "hoge";
+        return "hello";
     }
 }
