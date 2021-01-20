@@ -1,14 +1,24 @@
 package com.example.smabro_app.presentation.controller.api;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import com.example.smabro_app.application.facade.UserFacade;
+import com.example.smabro_app.presentation.dto.request.UserRequest;
+import com.example.smabro_app.presentation.dto.response.UserResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/v1/users")
+@RequiredArgsConstructor
 public class UserController {
 
-    @GetMapping("/hoge")
-    public String hoge() {
+    private final UserFacade userFacade;
 
-        return "hello";
+    @PostMapping("/")
+    public UserResponse userCreate(@ModelAttribute UserRequest request) {
+
+        return userFacade.userCreate(request);
     }
 }
