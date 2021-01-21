@@ -18,6 +18,12 @@ CREATE TABLE IF NOT EXISTS Matches(
     user_id int NOT NULL,
     opponent_id int NOT NULL,
     status_code int NOT NULL,
+    used_character1_id int NOT NULL,
+    used_character2_id int,
+    used_character3_id int,
+    opponent_character1_id int NOT NULL,
+    opponent_character2_id int,
+    opponent_character3_id int,
     PRIMARY KEY(id)
 );
 

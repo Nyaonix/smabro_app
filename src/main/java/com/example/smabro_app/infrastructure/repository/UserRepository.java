@@ -12,8 +12,8 @@ public class UserRepository {
 
     private final UsersMapper userMapper;
 
-    public Users userCreate(Users request) {
+    public int userCreate(Users request) {
 
-        return Users.from(userMapper.insert(UserRequestQuery.from(request)));
+        return userMapper.insert(UserRequestQuery.from(request));
     }
 }

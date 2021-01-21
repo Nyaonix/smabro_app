@@ -9,6 +9,8 @@ import lombok.Data;
 @Builder(access = AccessLevel.PRIVATE)
 public class UserRequestQuery {
 
+    private int id;
+
     private String name;
 
     private String password;

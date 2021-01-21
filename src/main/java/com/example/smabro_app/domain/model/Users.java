@@ -26,7 +26,7 @@ public class Users {
     /**
      * Column: rate
      */
-    private Integer rate;
+    private Integer rate = 1500;
 
     /**
      * Column: main_character_id

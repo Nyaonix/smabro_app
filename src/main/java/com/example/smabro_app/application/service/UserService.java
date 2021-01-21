@@ -11,7 +11,7 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public Users userCreate(Users request) {
+    public int userCreate(Users request) {
 
         return userRepository.userCreate(request);
     }

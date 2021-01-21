@@ -15,8 +15,8 @@ public class UserFacade {
 
     private final UserService userService;
 
-    public UserResponse userCreate(@Nonnull final UserRequest request) {
+    public int userCreate(@Nonnull final UserRequest request) {
 
-        return UserResponse.from(userService.userCreate(Users.from(request)));
+        return userService.userCreate(Users.from(request));
     }
 }

@@ -4,8 +4,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
-    initialization-mode: always
     sql-script-encoding: utf-8
 
 mybatis:
-  mapper-locations: classpath*:/sql/UserMapper.xml
+  mapper-locations: classpath*:/sql/*/*.xml

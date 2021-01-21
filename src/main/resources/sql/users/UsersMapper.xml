@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.smabro_app.infrastructure.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.example.smabro_app.infrastructure.model.request.UserRequestQuery">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="rate" jdbcType="INTEGER" property="rate" />
+    <result column="main_character_id" jdbcType="INTEGER" property="mainCharacterId" />
+    <result column="sub1_character_id" jdbcType="INTEGER" property="sub1CharacterId" />
+    <result column="sub2_character_id" jdbcType="INTEGER" property="sub2CharacterId" />
+  </resultMap>
+
+  <insert id="insert" parameterType="com.example.smabro_app.infrastructure.model.request.UserRequestQuery">
+    insert into smabro_app_db.Users (name, password, rate, main_character_id, sub1_character_id, sub2_character_id)
+    values (#{name}, #{password}, #{rate}, #{mainCharacterId}, #{sub1CharacterId}, #{sub2CharacterId})
+  </insert>
+</mapper>
