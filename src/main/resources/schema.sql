@@ -32,3 +32,19 @@ CREATE TABLE IF NOT EXISTS Characters(
     character_name VARCHAR(50) NOT NULL,
     PRIMARY KEY(id)
 );
+
+INSERT INTO Characters (character_name)
+VALUES ("マリオ");
+
+INSERT INTO Characters (character_name)
+VALUES ("ヨッシー");
+
+INSERT INTO Characters (character_name)
+VALUES ("ルイージ");
+
+INSERT INTO Users (name, password, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser1", "testPassword", 1500, 1, 2, 3);
+
+
+INSERT INTO Users (name, password, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser2", "testPassword", 1800, 3, 2, 1);

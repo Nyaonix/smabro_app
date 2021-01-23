@@ -7,11 +7,11 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * Table: Users
+ * Table: User
  */
 @Data
 @Builder(access = AccessLevel.PRIVATE)
-public class Users {
+public class User {
 
     /**
      * Column: name
@@ -43,9 +43,9 @@ public class Users {
      */
     private Integer sub2CharacterId;
 
-    public static Users from(UserRequest request) {
+    public static User from(UserRequest request) {
 
-        return Users.builder()
+        return User.builder()
                 .name(request.getName())
                 .password(request.getPassword())
                 .rate(request.getRate())
@@ -55,9 +55,9 @@ public class Users {
                 .build();
     }
 
-    public static Users from(UserResponseQuery responseQuery) {
+    public static User from(UserResponseQuery responseQuery) {
 
-        return Users.builder()
+        return User.builder()
                 .name(responseQuery.getName())
                 .password(responseQuery.getPassword())
                 .rate(responseQuery.getRate())

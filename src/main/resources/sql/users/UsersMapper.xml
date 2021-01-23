@@ -15,4 +15,10 @@
     insert into smabro_app_db.Users (name, password, rate, main_character_id, sub1_character_id, sub2_character_id)
     values (#{name}, #{password}, #{rate}, #{mainCharacterId}, #{sub1CharacterId}, #{sub2CharacterId})
   </insert>
+
+  <select id="findByUserName" parameterType="string" resultType="com.example.smabro_app.infrastructure.model.response.UserResponseQuery">
+    select name, rate, main_character_id, sub1_character_id, sub2_character_id
+    from smabro_app_db.Users
+    where name = #{name}
+  </select>
 </mapper>
