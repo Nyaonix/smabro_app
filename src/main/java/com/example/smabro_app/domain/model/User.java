@@ -9,7 +9,7 @@ import lombok.Data;
 import javax.annotation.Nonnull;
 
 /**
- * Table: User
+ * Table: Users
  */
 @Data
 @Builder(access = AccessLevel.PRIVATE)
