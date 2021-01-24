@@ -11,8 +11,6 @@ public class UserResponse {
 
     private String name;
 
-    private String password;
-
     private int rate;
 
     private int mainCharacterId;
@@ -25,7 +23,6 @@ public class UserResponse {
 
         return UserResponse.builder()
                 .name(user.getName())
-                .password(user.getPassword())
                 .rate(user.getRate())
                 .mainCharacterId(user.getMainCharacterId())
                 .sub1CharacterId(user.getSub1CharacterId())

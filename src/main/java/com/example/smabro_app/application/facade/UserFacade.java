@@ -15,13 +15,18 @@ public class UserFacade {
 
     private final UserService userService;
 
-    public int userCreate(@Nonnull final UserRequest request) {
+    public int createUser(@Nonnull final UserRequest request) {
 
-        return userService.userCreate(User.from(request));
+        return userService.createUser(User.from(request));
     }
 
-    public UserResponse findByUserName(String name) {
+    public UserResponse findByUserName(@Nonnull final String name) {
 
         return UserResponse.from(userService.findByUserName(name));
+    }
+
+    public int updateUser(@Nonnull final UserRequest request, final int id) {
+
+        return userService.updateUser(User.createUpdateUserRequest(request, id));
     }
 }

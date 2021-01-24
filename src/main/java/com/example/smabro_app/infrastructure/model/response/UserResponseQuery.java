@@ -7,8 +7,6 @@ public class UserResponseQuery {
 
     private String name;
 
-    private String password;
-
     private int rate;
 
     private int mainCharacterId;

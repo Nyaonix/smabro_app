@@ -6,12 +6,19 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.annotation.Nonnull;
+
 /**
  * Table: User
  */
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 public class User {
+
+    /**
+     * Column: name
+     */
+    private Integer id;
 
     /**
      * Column: name
@@ -43,7 +50,7 @@ public class User {
      */
     private Integer sub2CharacterId;
 
-    public static User from(UserRequest request) {
+    public static User from(@Nonnull final UserRequest request) {
 
         return User.builder()
                 .name(request.getName())
@@ -55,15 +62,27 @@ public class User {
                 .build();
     }
 
-    public static User from(UserResponseQuery responseQuery) {
+    public static User from(@Nonnull final UserResponseQuery responseQuery) {
 
         return User.builder()
                 .name(responseQuery.getName())
-                .password(responseQuery.getPassword())
                 .rate(responseQuery.getRate())
                 .mainCharacterId(responseQuery.getMainCharacterId())
                 .sub1CharacterId(responseQuery.getSub1CharacterId())
                 .sub2CharacterId(responseQuery.getSub2CharacterId())
+                .build();
+    }
+
+    public static User createUpdateUserRequest(@Nonnull final UserRequest request, final int id) {
+
+        return User.builder()
+                .id(id)
+                .name(request.getName())
+                .password(request.getPassword())
+                .rate(request.getRate())
+                .mainCharacterId(request.getMainCharacterId())
+                .sub1CharacterId(request.getSub1CharacterId())
+                .sub2CharacterId(request.getSub2CharacterId())
                 .build();
     }
 }

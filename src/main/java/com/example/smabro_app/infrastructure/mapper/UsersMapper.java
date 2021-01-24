@@ -4,9 +4,12 @@ import com.example.smabro_app.infrastructure.model.request.UserRequestQuery;
 import com.example.smabro_app.infrastructure.model.response.UserResponseQuery;
 import org.apache.ibatis.annotations.Mapper;
 
+import javax.annotation.Nonnull;
+
 @Mapper
 public interface UsersMapper {
 
-    int insert(UserRequestQuery record);
-    UserResponseQuery findByUserName(String name);
+    int insert(@Nonnull final UserRequestQuery record);
+    UserResponseQuery findByName(@Nonnull final String name);
+    int update(@Nonnull final UserRequestQuery record);
 }

@@ -34,4 +34,17 @@ public class UserRequestQuery {
                 .sub2CharacterId(request.getSub2CharacterId())
                 .build();
     }
+
+    public static UserRequestQuery createUpdateUserRequest(User request) {
+
+        return UserRequestQuery.builder()
+                .id(request.getId())
+                .name(request.getName())
+                .password(request.getPassword())
+                .rate(request.getRate())
+                .mainCharacterId(request.getMainCharacterId())
+                .sub1CharacterId(request.getSub1CharacterId())
+                .sub2CharacterId(request.getSub2CharacterId())
+                .build();
+    }
 }
