@@ -1,9 +1,15 @@
 package com.example.smabro_app.infrastructure.model.response;
 
+import com.example.smabro_app.domain.model.OpponentList;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+
+import java.util.List;
 
 @Data
-public class UserResponseQuery {
+public class OpponentResponse {
 
     private String name;
 

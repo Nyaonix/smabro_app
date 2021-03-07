@@ -6,12 +6,19 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.annotation.Nonnull;
+
 /**
  * Table: Users
  */
 @Data
 @Builder(access = AccessLevel.PRIVATE)
-public class Users {
+public class User {
+
+    /**
+     * Column: name
+     */
+    private Integer id;
 
     /**
      * Column: name
@@ -26,7 +33,7 @@ public class Users {
     /**
      * Column: rate
      */
-    private Integer rate = 1500;
+    private Integer rate;
 
     /**
      * Column: main_character_id
@@ -43,9 +50,9 @@ public class Users {
      */
     private Integer sub2CharacterId;
 
-    public static Users from(UserRequest request) {
+    public static User from(@Nonnull final UserRequest request) {
 
-        return Users.builder()
+        return User.builder()
                 .name(request.getName())
                 .password(request.getPassword())
                 .rate(request.getRate())
@@ -55,15 +62,27 @@ public class Users {
                 .build();
     }
 
-    public static Users from(UserResponseQuery responseQuery) {
+    public static User from(@Nonnull final UserResponseQuery responseQuery) {
 
-        return Users.builder()
+        return User.builder()
                 .name(responseQuery.getName())
-                .password(responseQuery.getPassword())
                 .rate(responseQuery.getRate())
                 .mainCharacterId(responseQuery.getMainCharacterId())
                 .sub1CharacterId(responseQuery.getSub1CharacterId())
                 .sub2CharacterId(responseQuery.getSub2CharacterId())
+                .build();
+    }
+
+    public static User createUpdateUserRequest(@Nonnull final UserRequest request, final int id) {
+
+        return User.builder()
+                .id(id)
+                .name(request.getName())
+                .password(request.getPassword())
+                .rate(request.getRate())
+                .mainCharacterId(request.getMainCharacterId())
+                .sub1CharacterId(request.getSub1CharacterId())
+                .sub2CharacterId(request.getSub2CharacterId())
                 .build();
     }
 }

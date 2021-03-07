@@ -11,7 +11,7 @@ public class UserRequest {
 
     private String password;
 
-    private int rate = 1500;
+    private int rate;
 
     private int mainCharacterId;
 
