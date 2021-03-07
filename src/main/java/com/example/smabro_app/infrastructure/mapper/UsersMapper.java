@@ -11,5 +11,6 @@ public interface UsersMapper {
 
     int insert(@Nonnull final UserRequestQuery record);
     UserResponseQuery findByName(@Nonnull final String name);
+    UserResponseQuery findById(final int id);
     int update(@Nonnull final UserRequestQuery record);
 }

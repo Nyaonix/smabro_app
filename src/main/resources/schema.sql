@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS Users(
     name VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
     rate INT NOT NULL,
+    matching_status int NOT NULL,
     main_character_id int NOT NULL,
     sub1_character_id int,
     sub2_character_id int,
@@ -33,18 +34,20 @@ CREATE TABLE IF NOT EXISTS Characters(
     PRIMARY KEY(id)
 );
 
-INSERT INTO Characters (character_name)
-VALUES ("マリオ");
+INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser1", "testPassword", 1, 1500, 1, 2, 3);
 
-INSERT INTO Characters (character_name)
-VALUES ("ヨッシー");
+INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser2", "testPassword", 0, 1600, 3, 2, 1);
 
-INSERT INTO Characters (character_name)
-VALUES ("ルイージ");
+INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser3", "testPassword", 1, 1700, 3, 2, 1);
 
-INSERT INTO Users (name, password, rate, main_character_id, sub1_character_id, sub2_character_id)
-VALUES ("testUser1", "testPassword", 1500, 1, 2, 3);
+INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser4", "testPassword", 2, 1800, 3, 2, 1);
 
+INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser5", "testPassword", 1, 1650, 3, 2, 1);
 
-INSERT INTO Users (name, password, rate, main_character_id, sub1_character_id, sub2_character_id)
-VALUES ("testUser2", "testPassword", 1800, 3, 2, 1);
+INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser6", "testPassword", 1, 1550, 3, 2, 1);
